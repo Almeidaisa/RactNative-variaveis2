@@ -4,6 +4,7 @@ import { View, Text, Button, StyleSheet } from 'react-native';
 export default function App() {
  const [count, setCount] = useState(0);
  const [count2, setCount2] = useState(0); 
+
  const incrementCount = () => {
     setCount(count + 1);
  };
@@ -12,13 +13,19 @@ export default function App() {
     setCount2(count2 + 1);
  };
 
+ const zerar = () => {
+    setCount(0);
+    setCount2(0); 
+ };
+
  return (
     <View style={styles.container}>
       <Text style={styles.title}>Contador em React Native</Text>
       <Text style={styles.count}>{count}</Text>
-      <Button title="Incrementar" onPress={incrementCount} />
+      <Button title="jogador1" onPress={incrementCount} />
       <Text style={styles.count}>{count2}</Text> 
-      <Button title="Incrementar 2" onPress={incrementCount2} /> 
+      <Button title="jogador2" onPress={incrementCount2} /> 
+      <Button title="Zerar" onPress={zerar} />
     </View>
  );
 }
@@ -40,4 +47,3 @@ const styles = StyleSheet.create({
     marginBottom: 20,
  },
 });
-	
